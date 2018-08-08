@@ -4,6 +4,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'START HERE: CHANGE ME'
+    return render_template("home.html")
+
+@app.route('/student/<int:student_id>')
+def display_student(student_id):
+	return render_template("student.html", n=student_id)
+	pass
 
 app.run(debug=True)
