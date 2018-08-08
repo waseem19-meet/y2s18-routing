@@ -6,9 +6,9 @@ app = Flask(__name__)
 def home():
     return render_template("home.html")
 
-@app.route('/student/<int:student_id>')
-def display_student(student_id):
-	return render_template("student.html", n=student_id)
+@app.route('/<string:name>')
+def display_student(name):
+	return render_template("student.html", name=name)
 	pass
 
 app.run(debug=True)
